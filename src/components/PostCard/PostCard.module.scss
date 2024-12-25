@@ -10,8 +10,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 150px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 600px;
 
   &:hover {
     transform: translateY(-5px);
@@ -47,5 +48,9 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  @media (max-width: 500px) {
+    max-width: 325px;
   }
 }
