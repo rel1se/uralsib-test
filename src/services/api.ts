@@ -11,6 +11,7 @@ export const fetchPosts = async (): Promise<Post[]> => {
     }
     catch (error) {
         console.error(error);
+        return [];
     }
 }
 
@@ -22,5 +23,6 @@ export const fetchPostDetails = async (postId: number): Promise<{ post: Post; co
     }
     catch (error){
         console.error(error);
+        return { post: {} as Post, comments: [] }
     }
 }

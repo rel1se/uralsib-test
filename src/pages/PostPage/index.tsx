@@ -3,11 +3,12 @@ import React, {useEffect, useState} from "react";
 import {Post, Comment} from "../../types.ts";
 import {fetchPostDetails} from "../../services/api.ts";
 import PostDetails from "../../components/PostDetails";
+import PostDetailsLoader from "./PostDetailsLoader.tsx";
 
-import styles from "./PostPage.module.scss";
+import styles from './PostPage.module.scss'
 
 const PostPage: React.FC = () => {
-    const { id } = useParams<{ id: string }>();
+    const {id} = useParams<{ id: string }>();
     const [post, setPost] = useState<Post | null>(null);
     const [comments, setComments] = useState<Comment[]>([]);
 
@@ -21,12 +22,12 @@ const PostPage: React.FC = () => {
     }, [id]);
 
     if (!post) return (
-        <p className={styles.loading}>
-            Loading...
-        </p>
+        <div className={styles.loading}>
+            <PostDetailsLoader/>
+        </div>
     )
 
-    return <PostDetails post={post} comments={comments} />;
+    return <PostDetails post={post} comments={comments}/>
 }
 
 export default PostPage;
