@@ -12,7 +12,6 @@ const PostCard: React.FC<Post> = ({id, title, body}) => {
                 <p>{body}</p>
             </div>
         </Link>
-
     )
 }
 

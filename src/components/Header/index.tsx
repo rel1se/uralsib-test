@@ -10,7 +10,7 @@ const Header: React.FC = () => {
                     <img src='/vite.svg' alt="logo"/>
                 </Link>
             </div>
-            <div className={styles.title}> Uralsib Test Task</div>
+            <div className={styles.title}>Uralsib Test Task</div>
         </header>
     )
 }

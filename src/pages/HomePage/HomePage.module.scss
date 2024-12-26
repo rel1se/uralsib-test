@@ -1,6 +1,8 @@
+@use '../../styles/_variables' as *;
+
 .homePage {
   width: 100%;
-  padding: 1rem 2rem 3rem;
+  padding: 1rem 2rem 4rem;
   overflow-x: hidden;
 
   .title {
@@ -16,6 +18,42 @@
     gap: 1rem;
     box-sizing: border-box;
     margin-right: 0;
+  }
+
+  .loadMore {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+
+    button {
+      padding: 0.75rem 2rem;
+      width: 200px;
+      height: 50px;
+      font-size: 1.25rem;
+      color: $light-gray;
+      background-color: $primary-color;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #0368d1;
+      }
+
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .noMorePosts {
+    text-align: center;
+    margin-top: 2rem;
+    color: #666;
+    font-size: 2rem;
+    font-weight: normal;
   }
   @media (max-width: 400px) {
     .postsList {
